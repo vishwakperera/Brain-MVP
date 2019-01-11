@@ -1,0 +1,34 @@
+{
+  "name": "brain",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "gulp; node ./bin/www",
+    "dev": "gulp; nodemon ./bin/www"
+  },
+  "dependencies": {
+    "body-parser": "1.18.2",
+    "bulma": "0.7.1",
+    "bulma-extensions": "1.0.30",
+    "bulma-start": "0.0.2",
+    "chart.js": "2.7.2",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.9",
+    "ejs": "~2.5.7",
+    "express": "~4.16.0",
+    "express-ejs-extend": "0.0.1",
+    "express-session": "^1.15.6",
+    "gulp": "github:gulpjs/gulp#4.0",
+    "gulp-concat": "2.6.1",
+    "gulp-ext-replace": "0.3.0",
+    "gulp-imagemin": "4.1.0",
+    "gulp-sass": "4.0.1",
+    "gulp-uglify": "3.0.0",
+    "http-errors": "~1.6.2",
+    "jquery": "3.3.1",
+    "moment": "2.22.1",
+    "mongodb": "3.0.7",
+    "morgan": "~1.9.0",
+    "nodemon": "^1.17.3"
+  }
+}

@@ -1,0 +1,65 @@
+<% extend('partials/layout') %>
+  <div class="tabs is-centered">
+    <ul>
+      <li id="gV" class="is-active">
+        <a id="gameView">
+            <span class="icon is-small"><i class="fa fa-resistance" aria-hidden="true"></i></span>
+            <span>Game View</span>
+          </a>
+      </li>
+      <li id="nV">
+        <a id="normalView">
+            <span class="icon is-small">
+              <i class="fa fa-empire" aria-hidden="true"></i>
+            </span>
+            <span>Normal View</span>
+          </a>
+      </li>
+    </ul>
+  </div>
+  <div id="view" class="container is-half">
+    <%- include gameView.ejs %>
+  </div>
+
+  <div class="container is-half">
+  </div>
+
+  <script>
+    $("#gameView").click(function() {
+      $.get("gameView", function(data, status) {
+        $("#view").html(data);
+      }).done(function() {
+        loadRobots();
+      });
+      $("#gV").addClass("is-active");
+      $("#nV").removeClass("is-active");
+    });
+    $("#normalView").click(function() {
+      $.get("normalView", function(data, status) {
+        $("#view").html(data);
+      }).done(function() {
+        //showChart();
+      }).fail(function() {
+        alert("failed");
+      });
+      $("#nV").addClass("is-active");
+      $("#gV").removeClass("is-active");
+    });
+  </script>
+  <!-- custom scripts for bulma-caruosel -->
+  <script>
+    function loadRobots() {
+      //bulmaCarousel.constructor();
+      var carousels = bulmaCarousel.attach();
+      //alert(carousels);
+
+
+    }
+    document.addEventListener('DOMContentLoaded', function() {
+      var carousels = bulmaCarousel.attach();
+
+    }, false);
+
+
+  </script>
+  <script src="javascripts/bulma-carousel.min.js"></script>

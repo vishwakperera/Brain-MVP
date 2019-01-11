@@ -1,0 +1,50 @@
+<% extend('partials/layout') %>
+  <div class="columns is-gapless is-multiline is-mobile is-7">
+    <div class="column is-three-quarter">
+      <div class="is-centered">
+        <h1 class="title">
+          Hurray <strong>Somebody</strong> took down
+          <br>another robot
+        </h1>
+      </div>
+      <div>
+        Issue Name
+      </div>
+    </div>
+    <div class="column is-one-quarter">
+      <h1 class="title">
+        Recent Activities
+      </h1>
+      <div class="scrollable" style="overflow-y: scroll; max-height: 85%; padding: 1px 5px 0 5px;">
+        <!-- First Box -->
+        <% for(var i=0; i<notification.length; i++) { %>
+          <% if (i<10) {%>
+            <div class="box">
+              <article class="media">
+                <div class="media-left">
+                  <figure class="image is-64x64">
+                    <img src="./images/<%= notification[i].userNumber %>.png" alt="Image">
+                  </figure>
+                </div>
+                <div class="media-content">
+                  <div class="content">
+                    <p>
+                      <strong><%= notification[i].assignTo %></strong> <small>@<%= notification[i].username %></small>
+                      <br> <small> Difficulty: <%= notification[i].difficulty %></small> <small>Priority: <%= notification[i].priority %></small>
+                      <!-- <br> <small><%= notification[i].time %></small> -->
+                      <br>
+                      <%= notification[i].description %>
+                    </p>
+                  </div>
+                  <nav class="level is-mobile">
+                    <% include partials/cardBottomOptions %>
+                  </nav>
+                </div>
+              </article>
+            </div>
+            <% } %>
+          <% } %>
+        <div class="smallGapTop" style="padding-bottom:1px;"></div>
+      </div>
+    </div>
+  </div>

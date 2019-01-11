@@ -1,0 +1,67 @@
+<div class="movingBckground">
+  <div class="game align-bottom">
+    <div class="columns">
+      <div class="column">
+        <div class='carousel carousel-animated carousel-animate-slide' data-size="5">
+          <div class="carousel-navigation is-centered">
+            <div class="carousel-nav-left">
+              <i class="fa fa-chevron-left" aria-hidden="true"></i>
+            </div>
+            <div class="carousel-nav-right">
+              <i class="fa fa-chevron-right" aria-hidden="true"></i>
+            </div>
+          </div>
+          <div class='carousel-container'>
+              <% for(var i=0; i<personalTasks.length; i++) { %>
+
+            <div class='carousel-item is-active align-bottom'>
+              <figure class="image ">
+                <a href="">
+                <img src="./images/<%=personalTasks[i].box_schema%>.png" class="robots">
+              </a>
+              </figure>
+              <!-- is-1by1 -->
+            </div>
+            <%}%>
+          </div>
+        </div>
+      </div>
+      <div class="column">
+        <div class="card">
+          <header class="card-header">
+            <p class="card-header-title" id="issue_title">
+              Component
+            </p>
+          </header>
+          <div class="card-content">
+            <div class="content" id="issue_description">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris.
+              <br>
+
+            </div>
+          </div>
+          <footer class="modal-card-foot">
+            <button class="button is-info">Mark as done</button>
+            <!-- <button class="button is-info is-outlined">Cancel</button> -->
+          </footer>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  var i=2;
+  var personalTasks=<%-JSON.stringify(personalTasks)%>;
+  $("#issue_title").html(personalTasks[i].name+" "+personalTasks[i].box_schema);
+  $("#issue_description").html(personalTasks[i].description);
+  $(".carousel-nav-right").click(function() {
+    i=(i+1)%personalTasks.length;
+    $("#issue_title").html(personalTasks[i].name+" "+personalTasks[i].box_schema);
+    $("#issue_description").html(personalTasks[i].description);
+  });
+  $(".carousel-nav-left").click(function() {
+    i=(i-1)%personalTasks.length;
+    $("#issue_title").html(personalTasks[i].name+" "+personalTasks[i].box_schema);
+    $("#issue_description").html(personalTasks[i].description);
+  });
+</script>

@@ -1,0 +1,23 @@
+
+  <% for(var i=0; i<personalTasks.length; i++) { %>
+    <% if (i%4==0) {%>
+      <div class="tile is-ancestor">
+    <% } %>
+        <div class="tile is-parent is-3">
+          <article class="tile is-child notification is-info">
+            <p class="title">
+              <%= personalTasks[i].name %>
+            </p>
+            <p class="subtitle">
+              <%= personalTasks[i].assignTo %>
+            </p>
+            <p>
+              <%= personalTasks[i].description %>
+            </p>
+          </article>
+        </div>
+      <% if ((i+1)%4==0) {%>
+      </div>
+      <% } %>
+
+    <% } %>

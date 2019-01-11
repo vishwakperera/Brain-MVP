@@ -1,0 +1,137 @@
+<% extend('partials/layout') %>
+  <div class="tile is-ancestor">
+    <div class="tile is-vertical is-12">
+      <div class="tile">
+        <div class="tile is-parent is-vertical">
+          <article class="tile is-child notification has-text-black-ter has-background-white-ter">
+            <p class="title">Tasks Completed</p>
+            <p class="subtitle">Weekly reports on the task completed by the , with the </p>
+            <canvas id="myChart1" width="40" height="20"></canvas>
+          </article>
+        </div>
+        <div class="tile is-parent">
+          <article class="tile is-child notification has-text-black-ter has-background-white-ter">
+            <p class="title">Time Analysis</p>
+            <p class="subtitle">Analysis of time take by the developer over time estimated for the task</p>
+            <canvas id="myChart2" width="40" height="20"></canvas>
+          </article>
+        </div>
+      </div>
+      <div class="tile">
+        <div class="tile is-parent">
+          <article class="tile is-child notification has-text-black-ter has-background-white-ter">
+            <p class="title">Time Analysis</p>
+            <p class="subtitle">Analysis of time take by the developer over time estimated for the task</p>
+            <!-- <canvas id="myChart3" width="40" height="20"></canvas> -->
+          </article>
+        </div>
+        <div class="tile is-parent is-vertical">
+          <article class="tile is-child notification has-text-black-ter has-background-white-ter">
+            <p class="title">Tasks Completed</p>
+            <p class="subtitle">Weekly reports on the task completed by the , with the </p>
+            <!-- <canvas id="myChart4" width="40" height="20"></canvas> -->
+          </article>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- Chart 1 -->
+  <script>
+    var ctx = document.getElementById("myChart1").getContext('2d');
+    var myChart = new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Satureday"],
+        datasets: [{
+          label: 'Number of Tasks Completed',
+          data: [12, 19, 3, 5, 2, 3],
+          backgroundColor: [
+            'rgba(255, 99, 132, 0.2)',
+            'rgba(54, 162, 235, 0.2)',
+            'rgba(255, 206, 86, 0.2)',
+            'rgba(75, 192, 192, 0.2)',
+            'rgba(153, 102, 255, 0.2)',
+            'rgba(255, 159, 64, 0.2)'
+          ],
+          borderColor: [
+            'rgba(255,99,132,1)',
+            'rgba(54, 162, 235, 1)',
+            'rgba(255, 206, 86, 1)',
+            'rgba(75, 192, 192, 1)',
+            'rgba(153, 102, 255, 1)',
+            'rgba(255, 159, 64, 1)'
+          ],
+          borderWidth: 1
+        }]
+      },
+      options: {
+        scales: {
+          yAxes: [{
+            ticks: {
+              beginAtZero: true
+            }
+          }]
+        }
+      }
+    });
+  </script>
+
+  <!-- Chart 2 -->
+  <script>
+    var ctx = document.getElementById("myChart2").getContext('2d');
+    var myChart = new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Satureday"],
+        datasets: [{
+          label: 'Number of Tasks Completed',
+          data: [12, 19, 3, 5, 2, 3],
+					backgroundColor: window.chartColors.red,
+					borderColor: window.chartColors.red,
+          borderWidth: 1,
+          fill: false,
+        }, {
+          label: 'Number of Tasks Completed',
+          data: [13, 4, 1, 9, 5, 1],
+					backgroundColor: window.chartColors.blue,
+					borderColor: window.chartColors.blue,
+          borderWidth: 1,
+          fill: false,
+        }]
+      },
+      options: {
+        responsive: true,
+        title: {
+          display: true,
+          text: 'Chart.js Line Chart'
+        },
+        tooltips: {
+          mode: 'index',
+          intersect: false,
+        },
+        hover: {
+          mode: 'nearest',
+          intersect: true
+        },
+        scales: {
+          xAxes: [{
+            display: true,
+            scaleLabel: {
+              display: true,
+              labelString: 'Month'
+            }
+          }],
+          yAxes: [{
+            display: true,
+            scaleLabel: {
+              display: true,
+              labelString: 'Value'
+            }
+          }]
+        }
+      }
+    });
+  </script>

@@ -1,0 +1,25 @@
+<% extend('partials/layout') %>
+    <div class="container is-centered">
+      <div id="name" class="">
+        <table border="1" class= "table">
+          <tr>
+            <th> Name </th>
+            <th> Description </th>
+            <th> Priority </th>
+            <th> Difficulty </th>
+            <th> Required Time </th>
+            <th> Assigned To </th>
+          </tr>
+          <% for(var i=0; i<backlog.length; i++) { %>
+            <tr>
+              <td><%= backlog[i].name %></td>
+              <td><%= backlog[i].description %></td>
+              <td><%= backlog[i].priority %></td>
+              <td><%= backlog[i].difficulty %></td>
+              <td><%= backlog[i].requiredTime %></td>
+              <td><%= backlog[i].assignTo %></td>
+            </tr>
+          <% } %>
+        </table>
+      </div>
+    </div>

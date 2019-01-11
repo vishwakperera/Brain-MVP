@@ -1,0 +1,67 @@
+<div class="navbar-brand">
+  <a class="navbar-item" src="index">
+    <img src="./images/brain.png" alt="Bulma: a modern CSS framework based on Flexbox" width="auto" height="100">
+  </a>
+  <div class="navbar-burger burger" data-target="navbarExampleTransparentExample">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+
+<div id="navbarTransparent" class="navbar-menu">
+  <div class="navbar-start">
+    <a class="navbar-item" href="index">
+      Home
+    </a>
+    <a class="navbar-item" href="mainView">
+      Main View
+    </a>
+    <a class="navbar-item" href="addIssue">
+      Add Issue
+    </a>
+    <a class="navbar-item" href="issueList">
+      Issue List
+    </a>
+    <div class="navbar-item has-dropdown is-hoverable is-primary">
+      <a class="navbar-link" href="profile">
+        Profile
+      </a>
+      <div class="navbar-dropdown is-boxed">
+        <a class="navbar-item" href="statistics">
+          Statistics
+        </a>
+        <!-- <a class="navbar-item" href="details">
+          Details
+        </a>
+        <hr class="navbar-divider"> -->
+        <a class="navbar-item" href="logout">
+          Logout
+        </a>
+      </div>
+    </div>
+    <a class="navbar-item">
+      <% if(user) { %>
+      <%= user.username %>
+      <% } %>
+    </a>
+  </div>
+  <div class="navbar-end">
+    <div class="navbar-item">
+      <div class="field is-grouped">
+        <p class="control">
+          <a class="button is-info" href="login">
+            <span>
+              Login
+            </span>
+          </a>
+        </p>
+        <p class="control">
+          <a class="button is-info is-outlined" href="register">
+            <span>Sign Up</span>
+          </a>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
