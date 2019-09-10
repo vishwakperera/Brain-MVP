@@ -12,13 +12,13 @@
     "bulma-extensions": "1.0.30",
     "bulma-start": "0.0.2",
     "chart.js": "2.7.2",
-    "cookie-parser": "~1.4.3",
+    "cookie-parser": "^1.4.4",
     "debug": "~2.6.9",
     "ejs": "~2.5.7",
-    "express": "~4.16.0",
+    "express": "^4.17.1",
     "express-ejs-extend": "0.0.1",
-    "express-session": "^1.15.6",
-    "gulp": "github:gulpjs/gulp#4.0",
+    "express-session": "^1.16.2",
+    "gulp": "4.0",
     "gulp-concat": "2.6.1",
     "gulp-ext-replace": "0.3.0",
     "gulp-imagemin": "4.1.0",
@@ -28,7 +28,8 @@
     "jquery": "3.3.1",
     "moment": "2.22.1",
     "mongodb": "3.0.7",
-    "morgan": "~1.9.0",
-    "nodemon": "^1.17.3"
+    "morgan": "^1.9.1",
+    "nodemon": "^1.19.2",
+    "undertaker": "^1.2.1"
   }
 }

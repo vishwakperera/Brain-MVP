@@ -35,18 +35,24 @@
           Details
         </a>
         <hr class="navbar-divider"> -->
-        <a class="navbar-item" href="logout">
-          Logout
-        </a>
+        <% if(user) { %>
+          <a class="navbar-item" href="logout">
+            Logout
+          </a>
+        <% } %>
+        
       </div>
     </div>
-    <a class="navbar-item">
-      <% if(user) { %>
-      <%= user.username %>
-      <% } %>
-    </a>
+    
   </div>
+
   <div class="navbar-end">
+    <% if(user) { %>
+    <a class="navbar-item">          
+        <%= user.username %>       
+    </a>
+    <% } %>
+    <% if(!user) { %>
     <div class="navbar-item">
       <div class="field is-grouped">
         <p class="control">
@@ -63,5 +69,6 @@
         </p>
       </div>
     </div>
+    <% } %>
   </div>
 </div>
