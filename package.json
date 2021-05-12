@@ -11,7 +11,7 @@
     "bulma": "0.7.1",
     "bulma-extensions": "1.0.30",
     "bulma-start": "0.0.2",
-    "chart.js": "2.7.2",
+    "chart.js": "2.9.4",
     "cookie-parser": "^1.4.4",
     "debug": "~2.6.9",
     "ejs": "~2.5.7",
