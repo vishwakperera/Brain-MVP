@@ -7,7 +7,7 @@
     "dev": "gulp; nodemon ./bin/www"
   },
   "dependencies": {
-    "body-parser": "1.18.2",
+    "body-parser": "1.20.1",
     "bulma": "0.7.1",
     "bulma-extensions": "1.0.30",
     "bulma-start": "0.0.2",
@@ -15,7 +15,7 @@
     "cookie-parser": "^1.4.4",
     "debug": "~2.6.9",
     "ejs": "~2.5.7",
-    "express": "^4.17.1",
+    "express": "^4.18.2",
     "express-ejs-extend": "0.0.1",
     "express-session": "^1.16.2",
     "gulp": "4.0",
